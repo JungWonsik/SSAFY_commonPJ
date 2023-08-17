@@ -1,0 +1,30 @@
+server:
+  port: 8000
+  ssl:
+    enabled: false
+spring:
+  profiles:
+    active: secret
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  redis:
+    keyspace-events: expired
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
+springfox:
+  documentation:
+    swagger:
+      use-model-v3: false
+
